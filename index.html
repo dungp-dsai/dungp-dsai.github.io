@@ -5,51 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pham Anh Dung - CV</title>
   <style>
-    /* Screen display */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Black background for the entire page */
     body {
-      padding: 0cm 0.5cm 0.5cm 0.5cm; /* top right bottom left */
+      background-color: #000000;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 11.5pt; /* Default font size for general content */
+      font-size: 11.5pt;
+      color: #333333;
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
-    
-    /* Print-specific styles */
-    @media print {
-      body {
-        padding: 0cm 0.5cm 0.5cm 0.5cm; /* Ensures consistent padding when printing */
-      }
-      
-      hr.divider {
-        border: none;
-        height: 2px;
-        background-color: black;
-        color: black; /* For older browsers */
-        display: block; /* Ensures visibility in print */
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        -webkit-print-color-adjust: exact; /* Chrome/Safari */
-        print-color-adjust: exact; /* Firefox */
-      }
-      
-      hr.section-divider {
-        border: none;
-        height: 1px;
-        background-color: #999999;
-        color: #999999; /* For older browsers */
-        display: block; /* Ensures visibility in print */
-        width: 100%;
-        margin-top: 0; /* Ensure consistent in print */
-        margin-bottom: 15px;
-        -webkit-print-color-adjust: exact; /* Chrome/Safari */
-        print-color-adjust: exact; /* Firefox */
-      }
+
+    /* Content container box */
+    .content-box {
+      background-color: #ffffff;
+      border: 2px solid #333333;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+      margin: 20px auto;
     }
-    
+
     /* Contact section styling */
     .contact-info {
       margin-top: 5px;
       margin-bottom: 20px;
-      font-size: 9pt; /* Contact details */
+      font-size: 9pt;
     }
     
     /* Make links in contact info appear the same color as normal text */
@@ -58,20 +49,26 @@
       text-decoration: none;
     }
     
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
     h1 {
       margin-bottom: 5px;
-      font-size: 18pt; /* Name size increased */
+      font-size: 18pt;
+      color: #000000;
     }
     
     h2 {
-      margin-bottom: 2px; /* Reduce space between title and line */
-      font-size: 12.5pt; /* Section headers */
+      margin-bottom: 2px;
+      font-size: 12.5pt;
+      color: #000000;
     }
     
     hr.divider {
       border: none;
       height: 1.25px;
-      background-color: black;
+      background-color: #000000;
       margin-top: 10px;
       margin-bottom: 20px;
       width: 100%;
@@ -81,14 +78,14 @@
       border: none;
       height: 0.5px;
       background-color: #999999;
-      margin-top: 0; /* Remove space above the line */
+      margin-top: 0;
       margin-bottom: 15px;
       width: 100%;
     }
 
     /* Section spacing */
     .education-section, .skills-section, .experience-section {
-      margin-bottom: 30px; /* Add more space between major sections */
+      margin-bottom: 30px;
     }
 
     /* Education section styling */
@@ -100,27 +97,30 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     
     .education-university {
       font-weight: bold;
       margin: 0;
-      font-size: 12pt; /* University names */
+      font-size: 12pt;
     }
     
     .education-date {
       text-align: right;
       font-weight: bold;
-      font-size: 12pt; /* Dates */
+      font-size: 12pt;
+      white-space: nowrap;
     }
     
     .education-degree {
       margin-top: 2px;
-      margin-bottom: 0; /* Remove margin to bring thesis closer */
+      margin-bottom: 0;
     }
     
     .thesis {
-      margin-top: 0; /* Remove top margin to be closer to degree */
+      margin-top: 0;
       margin-bottom: 0;
     }
 
@@ -134,43 +134,165 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 5px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     
     .job-title {
       margin: 0;
-      font-size: 12pt; /* Roles */
+      font-size: 12pt;
     }
     
     .company-name {
       font-weight: bold;
-      font-size: 12pt; /* Company names */
+      font-size: 12pt;
     }
     
     .job-date {
       text-align: right;
       font-weight: bold;
-      font-size: 12pt; /* Dates */
+      font-size: 12pt;
+      white-space: nowrap;
     }
 
     /* List item spacing */
     li {
-      margin-bottom: 8px; /* Add space between bullet points */
+      margin-bottom: 8px;
     }
     
     li:last-child {
-      margin-bottom: 0; /* Remove margin from last item in each list */
+      margin-bottom: 0;
     }
     
     ul {
-      margin-top: 10px; /* Space between header and first bullet */
+      margin-top: 10px;
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .content-box {
+        padding: 25px;
+        margin: 10px auto;
+        border-radius: 6px;
+      }
+
+      h1 {
+        font-size: 16pt;
+      }
+
+      h2 {
+        font-size: 11.5pt;
+      }
+
+      .education-header,
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .education-date,
+      .job-date {
+        text-align: left;
+      }
+
+      body {
+        font-size: 10.5pt;
+      }
+
+      .education-university,
+      .education-date,
+      .job-title,
+      .company-name,
+      .job-date {
+        font-size: 11pt;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .content-box {
+        padding: 20px;
+        margin: 5px auto;
+      }
+
+      body {
+        font-size: 10pt;
+        padding: 5px;
+      }
+
+      h1 {
+        font-size: 15pt;
+      }
+
+      h2 {
+        font-size: 11pt;
+      }
+
+      .education-university,
+      .education-date,
+      .job-title,
+      .company-name,
+      .job-date {
+        font-size: 10pt;
+      }
+
+      .contact-info {
+        font-size: 8.5pt;
+      }
+    }
+
+    /* Print-specific styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0cm 0.5cm 0.5cm 0.5cm;
+      }
+
+      .content-box {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+      
+      hr.divider {
+        border: none;
+        height: 2px;
+        background-color: black;
+        color: black;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      hr.section-divider {
+        border: none;
+        height: 1px;
+        background-color: #999999;
+        color: #999999;
+        display: block;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 15px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
     }
   </style>
 </head>
 <body>
+<div class="content-box">
 <div class="contact-section">
   <h1>Pham Anh Dung</h1>
   <div class="contact-info">
-    dungpham290198@gmail.com | +84 38 4656 114 | <a href="https://www.linkedin.com/in/dungp-dsai/">LinkedIn</a></a>
+    dungpham290198@gmail.com | +84 38 4656 114 | <a href="https://www.linkedin.com/in/dungp-dsai/">LinkedIn</a>
   </div>
   <hr class="divider">
 </div>
@@ -307,6 +429,7 @@
       <li>Sharing data science insights via talks, sessions, and collaboration with UEH’s Economics & Technology Club.</li>
     </ul>
   </div>
+</div>
 </div>
 </body>
 </html>
