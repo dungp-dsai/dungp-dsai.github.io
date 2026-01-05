@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pham Anh Dung - CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Black background for the entire page */
+    body {
+      background-color: #000000;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11.5pt;
+      color: #333333;
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Content container box */
+    .content-box {
+      background-color: #ffffff;
+      border: 2px solid #333333;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+      margin: 20px auto;
+    }
+
+    /* Contact section styling */
+    .contact-info {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-size: 9pt;
+    }
+    
+    /* Make links in contact info appear the same color as normal text */
+    .contact-info a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    h1 {
+      margin-bottom: 5px;
+      font-size: 18pt;
+      color: #000000;
+    }
+    
+    h2 {
+      margin-bottom: 2px;
+      font-size: 12.5pt;
+      color: #000000;
+    }
+    
+    hr.divider {
+      border: none;
+      height: 1.25px;
+      background-color: #000000;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    
+    hr.section-divider {
+      border: none;
+      height: 0.5px;
+      background-color: #999999;
+      margin-top: 0;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    /* Section spacing */
+    .education-section, .skills-section, .experience-section {
+      margin-bottom: 30px;
+    }
+
+    /* Education section styling */
+    .education-item {
+      margin-bottom: 10px;
+    }
+    
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .education-university {
+      font-weight: bold;
+      margin: 0;
+      font-size: 12pt;
+    }
+    
+    .education-date {
+      text-align: right;
+      font-weight: bold;
+      font-size: 12pt;
+      white-space: nowrap;
+    }
+    
+    .education-degree {
+      margin-top: 2px;
+      margin-bottom: 0;
+    }
+    
+    .thesis {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* Job section styling */
+    .job {
+      margin-bottom: 15px;
+    }
+    
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .job-title {
+      margin: 0;
+      font-size: 12pt;
+    }
+    
+    .company-name {
+      font-weight: bold;
+      font-size: 12pt;
+    }
+    
+    .job-date {
+      text-align: right;
+      font-weight: bold;
+      font-size: 12pt;
+      white-space: nowrap;
+    }
+
+    /* List item spacing */
+    li {
+      margin-bottom: 8px;
+    }
+    
+    li:last-child {
+      margin-bottom: 0;
+    }
+    
+    ul {
+      margin-top: 10px;
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .content-box {
+        padding: 25px;
+        margin: 10px auto;
+        border-radius: 6px;
+      }
+
+      h1 {
+        font-size: 16pt;
+      }
+
+      h2 {
+        font-size: 11.5pt;
+      }
+
+      .education-header,
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .education-date,
+      .job-date {
+        text-align: left;
+      }
+
+      body {
+        font-size: 10.5pt;
+      }
+
+      .education-university,
+      .education-date,
+      .job-title,
+      .company-name,
+      .job-date {
+        font-size: 11pt;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .content-box {
+        padding: 20px;
+        margin: 5px auto;
+      }
+
+      body {
+        font-size: 10pt;
+        padding: 5px;
+      }
+
+      h1 {
+        font-size: 15pt;
+      }
+
+      h2 {
+        font-size: 11pt;
+      }
+
+      .education-university,
+      .education-date,
+      .job-title,
+      .company-name,
+      .job-date {
+        font-size: 10pt;
+      }
+
+      .contact-info {
+        font-size: 8.5pt;
+      }
+    }
+
+    /* Print-specific styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0cm 0.5cm 0.5cm 0.5cm;
+      }
+
+      .content-box {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+      
+      hr.divider {
+        border: none;
+        height: 2px;
+        background-color: black;
+        color: black;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      hr.section-divider {
+        border: none;
+        height: 1px;
+        background-color: #999999;
+        color: #999999;
+        display: block;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 15px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="content-box">
+<div class="contact-section">
+  <h1>Pham Anh Dung</h1>
+  <div class="contact-info">
+    dungpham290198@gmail.com | +84 38 4656 114 | <a href="https://www.linkedin.com/in/dungp-dsai/">LinkedIn</a>
+  </div>
+  <hr class="divider">
+</div>
+
+<div class="education-section">
+  <h2>EDUCATION</h2>
+  <hr class="section-divider">
+  
+  <div class="education-item">
+    <div class="education-header">
+      <p class="education-university">University of Technology Ho Chi Minh City</p>
+      <span class="education-date">Sep 2020 – Apr 2023</span>
+    </div>
+    <p class="education-degree">Master of Engineering in Computer Science</p>
+  </div>
+
+  <div class="education-item">
+    <div class="education-header">
+      <p class="education-university">University of Economics Ho Chi Minh City</p>
+      <span class="education-date">Sep 2016 – Dec 2019</span>
+    </div>
+    <p class="education-degree">Bachelor's Degree in Management Information Systems</p>
+  </div>
+</div>
+
+<div class="skills-section">
+  <h2>SKILLS SUMMARY</h2>
+  <hr class="section-divider">
+  <ul>
+    <li><strong>Languages:</strong> C/C++, Python, PySpark, SQL</li>
+    <li><strong>Frameworks:</strong> Pandas, NumPy, Scikit-Learn, TensorFlow, Matplotlib, LangChain, FastAPI, Streamlit</li>
+    <li><strong>Tools:</strong> Airflow, MLflow, Power BI</li>
+    <li><strong>Platforms:</strong> Databricks, Jupyter Notebook, Visual Studio Code</li>
+    <li><strong>Soft Skills:</strong> Communication, Critical Thinking, Structure Thinking, Project Management, Stakeholder Management</li>
+  </ul>
+</div>
+
+<div class="experience-section">
+  <h2>PROFESSIONAL EXPERIENCE</h2>
+  <hr class="section-divider">
+  
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">BACKBASE</span> - Senior AI Engineer</p>
+      <span class="job-date">Aug 2025 – Present</span>
+    </div>
+    <ul>
+      <li>Building an AI retrieval system to help users efficiently discover and apply Backbase’s internal knowledge.</li>
+      <li>Developing a Model Context Protocol (MCP) server to serve as the entry point for other teams’ agentic systems.</li>
+      <li>Designing and setting up the team’s data platform.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">UNILEVER CORP</span> - Customer Development Data Science Lead</p>
+      <span class="job-date">Nov 2023 – Jul 2025</span>
+    </div>
+    <ul>
+      <li>Built an automated insights tool with Azure OpenAI, LangChain, and Streamlit, enabling natural language data queries and self-service analytics.</li>
+      <li>Led the development of a promotion OCR data extraction system leveraging YOLO and Gemini LLMs, reducing 30+ hours of manual work.</li>
+      <li>Developed ML models to assess investment potential and predict attrition, driving 30% projected sales growth and 10% lower risk exposure.</li>
+      <li>Designed and deployed a machine learning forecasting model, improving forecast accuracy by 20% and significantly decreasing manual planning time.</li>
+      <li>Established a centralized codebase and documentation framework, and introduced Agile project management practices, increasing team delivery efficiency.</li>
+      <li>Mentored team members and led AI/Data Science training across Southeast Asia on topics such as prompt engineering, LLMs, and NLP.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">MYLONG | Part-time</span> - Senior Data Scientist</p>
+      <span class="job-date">Sep 2023 – Aug 2024</span>
+    </div>
+    <ul>
+      <li>Developed a chatbot-based AI assistant using LangChain, LLMs, FastAPI, and Redis to streamline the job discovery and application process for clinicians.</li>
+      <li>Deployed the assistant as a microservice and implemented monitoring in production to ensure performance and reliability.</li>
+      <li>Established cross-functional collaboration workflows for AI projects, aligning Frontend, Backend, Design, and DevOps teams to improve delivery efficiency and project clarity.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">VNG CORP, ZALOPAY</span> - Senior Data Scientist</p>
+      <span class="job-date">Jun 2022 – Nov 2023</span>
+    </div>
+    <ul>
+      <li>Developed and deployed a voucher reminder ML model that increased redemption rates by over 50% compared to traditional approaches.</li>
+      <li>Built a cost-optimization model for bill payment reminders, resulting in a 20% reduction in operational costs.</li>
+      <li>Engineered a cross-sell machine learning model that doubled repeat transactions through personalized product recommendations.</li>
+      <li>Designed recommendation system solutions and mentored junior data scientists on techniques including product recommendations and customer lifetime value (CLV) prediction.</li>
+      <li>Enhanced the team's technical infrastructure by building ML monitoring dashboards and establishing unit testing protocols for model reliability.</li>
+      <li>Provided mentorship to junior data scientists, supporting their successful execution of key data science projects.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">PRUDENTIAL VIETNAM ASSURANCE</span> - Data Scientist</p>
+      <span class="job-date">Jun 2019 – Jun 2022</span>
+    </div>
+    <ul>
+      <li>Developed machine learning models for cross-selling, sales forecasting, and lapse prediction to enhance sales efficiency and quality.</li>
+      <li>Built a churn prediction model using integrated data from both the company and banking partners to improve customer retention strategies.</li>
+      <li>Performed advanced analytics across various business areas, delivering strategic insights to senior leadership for data-driven decision-making.</li>
+      <li>Supported Prudential's transition to a dynamic Power BI reporting system by assisting in the development of foundational databases and contributing to key stages of the analytics project lifecycle.</li>
+      <li>Initiated an innovative buddy recommendation application, democratizing access to personalized, data-driven insights across the organization.</li>
+      <li>Organized comprehensive Python training programs, upskilling teams within PVA, and coordinated the Community of Practice (CoP) to foster a culture of collaboration and knowledge sharing in data science.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="experience-section">
+  <h2>OTHER ACTIVITIES</h2>
+  <hr class="section-divider">
+  
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">Instructor at MindX</span></p>
+      <span class="job-date">Feb 2023 - Sep 2023</span>
+    </div>
+    <ul>
+      <li>Educating diverse levels in data science.</li>
+      <li>Assisting students in practical exercises.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">Data Science Mentor</span></p>
+      <span class="job-date">Sep 2016 - Dec 2020</span>
+    </div>
+    <ul>
+      <li>Providing personalized mentoring for undergraduates.</li>
+      <li>Sharing data science insights via talks, sessions, and collaboration with UEH’s Economics & Technology Club.</li>
+    </ul>
+  </div>
+</div>
+</div>
+</body>
+</html>
