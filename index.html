@@ -192,6 +192,24 @@
       line-height: 1.5;
     }
 
+    .interest-footer {
+      margin-bottom: 25px;
+      font-size: 14pt;
+      color: #333333;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .interest-footer a {
+      color: #333333;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+
+    .interest-footer a:hover {
+      color: #000000;
+    }
+
     /* Responsive design */
     @media screen and (max-width: 768px) {
       body {
@@ -253,6 +271,10 @@
       .interest-description {
         font-size: 12pt;
       }
+
+      .interest-footer {
+        font-size: 13pt;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -311,6 +333,10 @@
       .interest-description {
         font-size: 11pt;
       }
+
+      .interest-footer {
+        font-size: 12pt;
+      }
     }
 
     /* Print-specific styles */
@@ -367,6 +393,7 @@
 
     <div class="interest-section">
       <h2>Interests</h2>
+      <p class="interest-footer">I love to build, learn and write to share about the journey. Found my blog at <a href="https://dungp.svbtle.com/" target="_blank" rel="noopener noreferrer"><b>Blog</b></a></p>
       <div class="interest-cards">
         <div class="interest-card">
           <div class="interest-icon">
